@@ -178,6 +178,7 @@ def user_stats(df):
         gender_count = df['Gender'].value_counts()
         print("The gender count is: " ,gender_count)
         
+    # Handle Gender column exception for the for washington   
     except KeyError:        
         print("No Gender data is available for washington city")        
                 
