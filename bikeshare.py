@@ -177,7 +177,8 @@ def user_stats(df):
     try:
         gender_count = df['Gender'].value_counts()
         print("The gender count is: " ,gender_count)
-        
+
+    # Handle Gender column exception for the for washington city   
     except KeyError:        
         print("No Gender data is available for washington city")        
                 
@@ -187,9 +188,9 @@ def user_stats(df):
         most_recet_YOB = df['Birth Year'].max()
         most_common_YOB = df['Birth Year'].mode()[0]
     
-        print("The earliest year of birth is: " ,earliest_YOB)
-        print("The most recent year of birth is: " ,most_recet_YOB)
-        print("The most common year of birth is: " ,most_common_YOB)
+        # Refactor the print statement to execute from one line of code
+        print("The earliest year of birth is: " ,earliest_YOB, "\nThe most recent year of birth is: " ,most_recet_YOB, "\nThe most common year of birth is: " ,most_common_YOB)
+
         
     except KeyError:
         print("No Birth Year data is available for washington city")
