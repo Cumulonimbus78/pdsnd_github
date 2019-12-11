@@ -127,18 +127,13 @@ def station_stats(df):
     print('\nCalculating The Most Popular Stations and Trip...\n')
     start_time = time.time()
 
-    #display most commonly used start station
+    #calculate Station stats
     common_start_station = df['Start Station'].mode()[0]
-    print("The most common start station is:", common_start_station)
-
-    #display most commonly used end station
     common_end_station = df['End Station'].mode()[0]
-    print("The most commonly used End Station is:", common_end_station)
-
-
-    # display most frequent combination of start station and end station trip
     frequent_start_end_station = df['Start and End Stations'].mode()[0]
-    print("The most frequent combination of start and end stations is:", frequent_start_end_station)
+    
+    #display station stats 
+    print("The most common start station is:", common_start_station, "\nThe most commonly used End Station is:", common_end_station, "\nThe most frequent combination of start and end stations is:", frequent_start_end_station )
 
 
     print("\nThis took %s seconds." % (time.time() - start_time))
@@ -177,8 +172,15 @@ def user_stats(df):
     try:
         gender_count = df['Gender'].value_counts()
         print("The gender count is: " ,gender_count)
+<<<<<<< HEAD
         
     # Handle Gender column exception for the for washington   
+||||||| 91d3ec5
+        
+=======
+
+    # Handle Gender column exception for the for washington city   
+>>>>>>> refactoring
     except KeyError:        
         print("No Gender data is available for washington city")        
                 
@@ -188,9 +190,9 @@ def user_stats(df):
         most_recet_YOB = df['Birth Year'].max()
         most_common_YOB = df['Birth Year'].mode()[0]
     
-        print("The earliest year of birth is: " ,earliest_YOB)
-        print("The most recent year of birth is: " ,most_recet_YOB)
-        print("The most common year of birth is: " ,most_common_YOB)
+        # Refactor the print statement to execute from one line of code
+        print("The earliest year of birth is: " ,earliest_YOB, "\nThe most recent year of birth is: " ,most_recet_YOB, "\nThe most common year of birth is: " ,most_common_YOB)
+
         
     except KeyError:
         print("No Birth Year data is available for washington city")
